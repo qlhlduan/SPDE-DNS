@@ -1,2 +1,2 @@
 # termsturcture
-Repository for modelling term structure using INLA
+Repository for modelling term structure using INLA package.
