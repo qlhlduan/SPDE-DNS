@@ -13,7 +13,9 @@ required_packages <- c(
   "fields",
   "reshape2",
   "ggplot2",
-  "gstat"
+  "gstat",
+  "quadprog",
+  "dplyr"
 )
 
 ## Install missing packages
