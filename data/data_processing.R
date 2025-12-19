@@ -1,3 +1,7 @@
+## ===============================
+## Download and preprocess yield data
+## ===============================
+
 u <- url("https://www.sas.upenn.edu/~fdiebold/papers/paper49/FBFITTED.txt")
 yield <- scan(u, skip = 14)
 yield_mat <- NULL
