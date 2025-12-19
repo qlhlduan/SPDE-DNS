@@ -1,6 +1,6 @@
 # SPDE-Term Structure
 
-This repository contains the code for the paper "Forecasting the Term Structure of Interest Rates with SPDE approach" by Qihao Duan, Alexandre B. Simas, David Bolin, and Rapha\"el Huser.
+This repository contains the code for the paper "Forecasting the Term Structure of Interest Rates with SPDE approach" by Qihao Duan, Alexandre B. Simas, David Bolin, and Raphaël Huser.
 
 ## Overview
 
