@@ -14,3 +14,6 @@ colnames(yield_mat) <- c("Date", colname)
 yield_mat <- as.data.frame(yield_mat)
 
 yield_mat$Date <- as.Date(as.character(yield_mat$Date),format = "%Y%m%d")
+
+#save yield_mat to csv
+write.csv(yield_mat, "yield.csv", row.names = FALSE)
