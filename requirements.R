@@ -9,11 +9,9 @@ required_packages <- c(
   "inlabru",
   "Matrix",
   "sf",
-  "parallel",
   "fields",
   "reshape2",
   "ggplot2",
-  "gstat",
   "quadprog",
   "dplyr",
   "reshape2"
