@@ -14,6 +14,7 @@ required_packages <- c(
   "ggplot2",
   "quadprog",
   "dplyr",
+  "parallel",
   "reshape2"
 )
 
