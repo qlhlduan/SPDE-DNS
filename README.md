@@ -9,9 +9,8 @@ The paper proposes an extension of the Dynamic Nelson-Siegel (DNS) model for for
 ## Repository Structure
 
 - `data_processing.R`: Downloads and processes the Fama-Bliss US Treasury zero-coupon bond yields.
-- `models_DNS.R`: Defines the DNS model and the residual-adjusted models (stationary, non-stationary, anisotropic, spatio-temporal) and the joint estimation of lambda.
+- `nelson.R`: Defines the Dynamic Nelson-Siegel (DNS) model.
 - `model_fitting.R`: Fits the models to the data.
-- `forecasting.R`: Defines functions for out-of-sample forecasting and evaluation.
 - `economic_value.R`: Implements the economic value analysis (portfolio optimization and performance fee).
 - `requirements.R`: Lists the required R packages and installs them if missing.
 
@@ -24,7 +23,7 @@ The data is the Fama-Bliss US Treasury zero-coupon bond yields from January 1985
 1. Run `requirements.R` to install the required packages.
 2. Run `data_processing.R` to download and process the data.
 3. Run `model_fitting.R` to fit the models (this may take a long time).
-4. Use the functions in `forecasting.R` and `economic_value.R` to reproduce the forecasting and economic value results.
+4. Use the functions in `economic_value.R` to reproduce the economic value results.
 
 ## Note
 
