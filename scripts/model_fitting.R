@@ -70,3 +70,26 @@ fit_sf <- bru(formula_sf,  data = data_geo)
 fit_nsf <- bru(formula_nsf,  data = data_geo)
 fit_st <- bru(formula_st, data = data_ngeo)
 fit_aniso <- bru(formula_aniso, data = data_ngeo)
+
+
+#Save models
+fit_ar1_summary <- list(fixed  = fit_ar1$summary.fixed,hyper  = fit_ar1$summary.hyperpar)
+saveRDS(list(fixed = fit_ar1$summary.fixed, hyper = fit_ar1$summary.hyperpar), 
+        file = "Fits/fit_ar1_summary.rds")
+
+fit_sf_summary <- list(fixed  = fit_sf$summary.fixed,hyper  = fit_sf$summary.hyperpar)
+saveRDS(list(fixed = fit_sf$summary.fixed, hyper = fit_sf$summary$hyperpar), 
+        file = "Fits/fit_sf_summary.rds")
+
+fit_nsf_summary <- list(fixed  = fit_nsf$summary.fixed,hyper  = fit_nsf$summary.hyperpar)
+saveRDS(list(fixed = fit_nsf$summary.fixed, hyper = fit_nsf$summary.hyperpar), 
+        file = "Fits/fit_nsf_summary.rds")
+
+fit_st_summary <- list(fixed  = fit_st$summary.fixed,hyper  = fit_st$summary.hyperpar)
+saveRDS(list(fixed = fit_st$summary.fixed, hyper = fit_st$summary$hyperpar), 
+        file = "Fits/fit_st_summary.rds")
+
+fit_aniso_summary <- list(fixed  = fit_aniso$summary.fixed,hyper  = fit_aniso$summary.hyperpar)
+saveRDS(list(fixed = fit_aniso$summary.fixed, hyper = fit_aniso$summary.hyperpar), 
+        file = "Fits/fit_aniso_summary.rds")
+
