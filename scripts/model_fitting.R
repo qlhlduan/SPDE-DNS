@@ -39,7 +39,7 @@ ns <- build_nelsonsiegel_model(dates, maturity, lambda = 0.0609)
 register_nelsonsiegel_inlabru()
 
 #Bayesian DNS model
-formula_ar1 <- Y ~ -1 + nelsonsiegel(cbind(index_x, index_y), model = ns) + F1f(F1f) + F2f(F2f) + F3f(F3f)
+formula_bdns <- Y ~ -1 + nelsonsiegel(cbind(index_x, index_y), model = ns) + F1f(F1f) + F2f(F2f) + F3f(F3f)
 
 #Stationary SPDE model
 data_locs = data.frame(dates = ix, maturity = iylog)
@@ -65,7 +65,7 @@ model_aniso <- rspde.anistropic2d(mesh = mesh)
 formula_aniso <- Y ~ -1 + Intercept(1) + nelsonsiegel(cbind(index_x, index_y), model = ns) + field(cbind(maturity, dates), model = model_aniso)
 
 #Fit models
-fit_ar1 <- bru(formula_ar1,  data = data_ar)
+fit_bdns <- bru(formula_bdns,  data = data_ar)
 fit_sf <- bru(formula_sf,  data = data_geo)
 fit_nsf <- bru(formula_nsf,  data = data_geo)
 fit_st <- bru(formula_st, data = data_ngeo)
@@ -73,7 +73,7 @@ fit_aniso <- bru(formula_aniso, data = data_ngeo)
 
 
 #Save models
-save(fit_ar1,file="Fits/fit_ar1.RData")
+save(fit_bdns,file="Fits/fit_bdns.RData")
 save(fit_sf,file="Fits/fit_sf.RData")
 save(fit_nsf,file="Fits/fit_nsf.RData")
 save(fit_st,file="Fits/fit_st.RData")
