@@ -73,18 +73,9 @@ fit_aniso <- bru(formula_aniso, data = data_ngeo)
 
 
 #Save models
-saveRDS(list(fixed = fit_ar1$summary.fixed, hyper = fit_ar1$summary.hyperpar), 
-        file = "Fits/fit_ar1_summary.rds")
-
-saveRDS(list(fixed = fit_sf$summary.fixed, hyper = fit_sf$summary$hyperpar), 
-        file = "Fits/fit_sf_summary.rds")
-
-saveRDS(list(fixed = fit_nsf$summary.fixed, hyper = fit_nsf$summary.hyperpar), 
-        file = "Fits/fit_nsf_summary.rds")
-
-saveRDS(list(fixed = fit_st$summary.fixed, hyper = fit_st$summary$hyperpar), 
-        file = "Fits/fit_st_summary.rds")
-
-saveRDS(list(fixed = fit_aniso$summary.fixed, hyper = fit_aniso$summary.hyperpar), 
-        file = "Fits/fit_aniso_summary.rds")
+save(fit_ar1,file="Fits/fit_ar1.RData")
+save(fit_sf,file="Fits/fit_sf.RData")
+save(fit_nsf,file="Fits/fit_nsf.RData")
+save(fit_st,file="Fits/fit_st.RData")
+save(fit_aniso,file="Fits/fit_aniso.RData")
 
