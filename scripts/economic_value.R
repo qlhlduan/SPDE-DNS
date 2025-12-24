@@ -41,36 +41,31 @@ data <- yield[yield$Date >= "1985-01-01" & yield$Date <= "2000-12-31",]
 data <- data[121:181,c(3,6,12,14,19)]
 rownames(data) <- 1:nrow(data)
 
-res_ns <- scan("res-ns+inter.csv")
-res_ns <- as.data.frame(matrix(res_ns, ncol = 15, byrow = FALSE))[,1:5]
-mean_ns <- compute_grouped_mean(res_ns)
-cov_ns <- compute_grouped_cov(res_ns)
+res-bdns <- scan("BDNS.csv")[,1:5]
+mean_ns <- compute_grouped_mean(res-bdns)
+cov_ns <- compute_grouped_cov(res-bdns)
 
-res_aniso <- scan("res-ns+aniso+inter.csv")
-res_aniso <- as.data.frame(matrix(res_aniso, ncol = 15, byrow = FALSE))[,1:5]
+res_aniso <- scan("Aniso.csv")[,1:5]
 mean_aniso <- compute_grouped_mean(res_aniso)
 cov_aniso <- compute_grouped_cov(res_aniso)
 
-res_st <- scan("res-ns+st+inter.csv")
-res_st <- as.data.frame(matrix(res_st, ncol = 15, byrow = FALSE))[,1:5]
+res_st <- scan("Spatemp.csv")[,1:5]
 mean_st <- compute_grouped_mean(res_st)
 cov_st <- compute_grouped_cov(res_st)
 
-res_sf <- scan("res-ns+sf5000+inter.csv")
-res_sf <- as.data.frame(matrix(res_sf, ncol = 15, byrow = FALSE))[,1:5]
+res_sf <- scan("Stat.csv")[,1:5]
 mean_sf <- compute_grouped_mean(res_sf)
 cov_sf <- compute_grouped_cov(res_sf)
 
-res_nsf <- scan("res-ns+nsf5000+inter.csv")
-res_nsf <- as.data.frame(matrix(res_nsf, ncol = 15, byrow = FALSE))[,1:5]
+res_nsf <- scan("Nonstat.csv")[,1:5]
 mean_nsf <- compute_grouped_mean(res_nsf)
 cov_nsf <- compute_grouped_cov(res_nsf)
 
-res_gamma <- read.csv("res-ns+st-flexible-gamma-inter.csv")[,1:5]
+res_gamma <- read.csv("Gamma.csv")[,1:5]
 mean_gamma <- compute_grouped_mean(res_gamma)
 cov_gamma <- compute_grouped_cov(res_gamma)
 
-res_log <- read.csv("res-ns+st-flexible-log-inter-2.csv")[,1:5]
+res_log <- read.csv("Lognormal.csv")[,1:5]
 mean_log <- compute_grouped_mean(res_log)
 cov_log <- compute_grouped_cov(res_log)
 
@@ -145,9 +140,9 @@ percent_gamma <- performance_fee_gamma * 10000 / colMeans(pmat_ns)
 percent_log <- performance_fee_log * 10000 / colMeans(pmat_ns)
 
 performance_fee <- rbind(performance_fee_st, performance_fee_aniso, performance_fee_sf, performance_fee_nsf, performance_fee_gamma, performance_fee_log)
-rownames(performance_fee) <- c("st", "aniso", "sf", "nsf", "gamma", "log")
+rownames(performance_fee) <- c("st", "aniso", "stat", "nonstat", "gamma", "lognormal")
 
 percent_fee <- rbind(percent_st, percent_aniso, percent_sf, percent_nsf, percent_gamma, percent_log)
-rownames(percent_fee) <- c("st", "aniso", "sf", "nsf", "gamma", "log")
+rownames(percent_fee) <- c("st", "aniso", "stat", "nonstat", "gamma", "lognormal")
 
 print(percent_fee)
