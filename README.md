@@ -8,11 +8,15 @@ The paper proposes an extension of the Dynamic Nelson-Siegel (DNS) model for for
 
 ## Repository Structure
 
-- `data_processing.R`: Downloads and processes the Fama-Bliss US Treasury zero-coupon bond yields.
-- `nelson.R`: Defines the Dynamic Nelson-Siegel (DNS) model.
-- `model_fitting.R`: Fits the models to the data.
-- `economic_value.R`: Implements the economic value analysis (portfolio optimization and performance fee).
-- `requirements.R`: Lists the required R packages and installs them if missing.
+- `data_processing.R`: Downloads and processes Fama-Bliss US Treasury zero-coupon bond yields from CRSP.
+- `nelson.R`: Implements the Dynamic Nelson-Siegel (DNS) model specification and state-space representation.
+- `model_fitting.R`: Estimates DNS models with fixed lambda parameter using Kalman filtering.
+- `model_fitting_joint.R`: Jointly estimates lambda parameter along with other model parameters using two alternative prior specifications.
+- `prediction.R`: Generates out-of-sample yield curve forecasts and computes prediction errors.
+- `crossval_metrics.R`: Calculates cross-validation metrics for model comparison.
+- `economic_value.R`: Performs economic value analysis through portfolio optimization and calculates performance fees.
+- `requirements.R`: Checks for and installs all required R packages and dependencies.
+- `results/`: Contains saved model estimates, prediction outputs from fitted models.
 
 ## Data
 
@@ -20,10 +24,11 @@ The data is the Fama-Bliss US Treasury zero-coupon bond yields from January 1985
 
 ## Usage
 
-1. Run `requirements.R` to install the required packages.
-2. Run `data_processing.R` to download and process the data.
-3. Run `model_fitting.R` to fit the models (this may take a long time).
-4. Use the functions in `economic_value.R` to reproduce the economic value results.
+1. Install dependencies by running requirements.R.
+2. Execute data_processing.R to download and prepare the yield curve data.
+3. Fit the models by running model_fitting.R and model_fitting_joint.R (note: estimation may take considerable time depending on your system).
+4. Generate predictions using prediction.R and evaluate model performance with crossval_metrics.R.
+5. Reproduce the economic value analysis by executing the functions in economic_value.R.
 
 ## Note
 
